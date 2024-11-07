@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <title>Wedding Organizer - Login</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/icons/logo.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Marcellus&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Boostraps Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body style="background: linear-gradient(135deg, #f7f3f1 0%, #c49b66 100%);">
+    <div class="container min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="row p-4 bg-light rounded-2 shadow" style="width: 80%;">
+            <div class="col-7">
+                <img class="w-100 h-100 object-fit-cover rounded-1" src="img/service-5.jpg" alt="" style=" object-fit: cover;">
+            </div>
+            <div class="col-5">
+                <!-- Login Form -->
+                <div id="login-form" class="form-box">
+                    <h2 class="text-center mb-4" style="color: #c6a84f;">Login</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="login-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="login-email" placeholder="Masukkan email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="login-password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="login-password" placeholder="Masukkan password" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Ingat Saya</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3" data-bs-toggle="modal" data-bs-target="#loginSuccessModal">Login</button>
+                        <p class="text-center">Belum punya akun? <a href="#" onclick="showRegister()">Register</a></p>
+                    </form>
+                </div>
+                
+                <!-- Register Form -->
+                <div id="register-form" class="form-box d-none">
+                    <h2 class="text-center mb-4">Register</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="register-name" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="register-name" placeholder="Masukkan nama" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="register-email" placeholder="Masukkan email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="register-password" placeholder="Masukkan password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-confirm-password" class="form-label">Konfirmasi Password</label>
+                            <input type="password" class="form-control" id="register-confirm-password" placeholder="Konfirmasi password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3" data-bs-toggle="modal" data-bs-target="#signupSuccessModal">Register</button>
+                        <p class="text-center">Sudah punya akun? <a href="#" onclick="showLogin()">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ModalSuccessful Login -->
+    <div class="modal fade" id="loginSuccessModal" tabindex="-1" aria-labelledby="loginSuccessLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: var(--primary);">
+                    <h5 class="modal-title fs-5" id="exampleModalLabel">Login Berhasil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Selamat datang kembali! Anda telah berhasil login.
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" href="index.html">Lanjutkan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Successful Sign-up -->
+    <div class="modal fade" id="signupSuccessModal" tabindex="-1" aria-labelledby="signupSuccessLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: var(--primary);">
+                    <h5 class="modal-title" id="signupSuccessLabel">Pendaftaran Berhasil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Terima kasih telah mendaftar! Akun Anda telah berhasil dibuat.
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" href="index.html">Lanjutkan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showRegister() {
+            document.getElementById('login-form').classList.add('d-none');
+            document.getElementById('register-form').classList.remove('d-none');
+        }
+
+        function showLogin() {
+            document.getElementById('register-form').classList.add('d-none');
+            document.getElementById('login-form').classList.remove('d-none');
+        }
+    </script>
+</body>
+</html>
